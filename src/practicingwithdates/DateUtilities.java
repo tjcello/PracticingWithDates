@@ -5,17 +5,26 @@
  */
 package practicingwithdates;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 /**
  *
  * @author tduwe
  */
-public class DateUtility {
+public class DateUtilities {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        LocalDateTime date = LocalDateTime.now();
+        date.getDayOfMonth();
+        System.out.println(date);
+        
+        
+        
+        
     }
     
 }
