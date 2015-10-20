@@ -7,6 +7,10 @@ package practicingwithdates;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.TemporalField;
 
 /**
  *
@@ -18,13 +22,14 @@ public class DateUtilities {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        LocalDateTime date = LocalDateTime.now();
-        date.getDayOfMonth();
+        LocalDate date = LocalDate.now();
         System.out.println(date);
-        
-        
-        
-        
+        DateTimeFormatter fmt = DateTimeFormatter.ofPattern("yyyy-MM-dd  hh:mm a");
+
+        ZonedDateTime local = ZonedDateTime.now();
+        local = local.withZoneSameInstant(ZoneId.of("Europe/Rome"));
+
+        System.out.println(local.format(fmt));
     }
-    
+
 }
