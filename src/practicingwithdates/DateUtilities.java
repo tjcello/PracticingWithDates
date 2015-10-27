@@ -62,10 +62,11 @@ public class DateUtilities {
    /**
     * This method returns a date from different time zones
     * @param d
+     * @return 
     * @returns the date and time formatted
     */
    public String toString(LocalDate d){
-       DateTimeFormatter formats = DateTimeFormatter.ISO_ZONED_DATE_TIME;
+       DateTimeFormatter formats = DateTimeFormatter.ISO_DATE_TIME;
        return formats.format(d);
    }
    /**
