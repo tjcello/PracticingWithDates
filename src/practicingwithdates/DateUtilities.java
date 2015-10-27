@@ -28,6 +28,11 @@ public class DateUtilities {
 //        return LocalDateTime.now();
 //    }
     
+    /**
+     * 
+     * @returns the duration between now and a specified day of the month or day 
+     * of the year
+     */
     public Duration getDateDiff(){
         LocalDateTime startDate = LocalDateTime.now();
         LocalDateTime endDate = startDate.withDayOfMonth(22).withDayOfYear(360);
@@ -35,23 +40,40 @@ public class DateUtilities {
         return diff;
        
     }
-    
+    /**
+     * This is a fun method to get the date from Five Days from right now, two hours behind
+     * @return date that is five days in the future and is two hours behind the time right now
+     */
     public LocalDateTime getFiveDaysFromNowTwoHoursAgo(){
        LocalDateTime now = LocalDateTime.now();
         LocalDateTime dueDate = now.plusDays(5).minusHours(2);
         return dueDate;
     }
-    
+    /**
+     * This method returns a date and time and formats it in a string
+     * @param date
+     * @returns a formatted date
+     */
    public String toString(LocalDateTime date){
        DateTimeFormatter df = DateTimeFormatter.ISO_DATE_TIME;
        return df.format(date);   
      
    }
-   
+   /**
+    * This method returns a date from different time zones
+    * @param d
+    * @returns the date and time formatted
+    */
    public String toString(LocalDate d){
        DateTimeFormatter formats = DateTimeFormatter.ISO_ZONED_DATE_TIME;
        return formats.format(d);
    }
+   /**
+    * This method sets a Formatter to change the appearance of a date.  It can than be 
+    * changed 
+    * @param it
+    * @returns the string
+    */
     
    public LocalDate toDate(String it){
        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
@@ -59,14 +81,18 @@ public class DateUtilities {
         return mine;	
 	
    }
-   
+   /**
+    * 
+    * @param time
+    * @return 
+    */
    public LocalDateTime toDateTime(String time){
        DateTimeFormatter formats = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"); 
        LocalDateTime ours= LocalDateTime.parse(time,formats);
        return ours;
        
    }
-    
+  
     public static void main(String[] args) {
         DateUtilities app = new DateUtilities();
 //        LocalDateTime date = app.getCurrentDateTime();
