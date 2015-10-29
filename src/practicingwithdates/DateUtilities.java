@@ -84,9 +84,9 @@ public class DateUtilities {
 	
    }
    /**
-    * 
+    * This method changes the format of the date entered and allows the format to be changed later
     * @param time
-    * @return 
+    * @return the format created in the formatter 
     */
    public LocalDateTime toDateTime(String time){
        DateTimeFormatter formats = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"); 
