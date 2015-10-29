@@ -19,7 +19,8 @@ import java.util.Locale;
 import javax.swing.text.DateFormatter;
 
 /**
- *
+ *This Utility is designed to help people access a program that will help them convert 
+ * dates that will help them with other projects.
  * @author tduwe
  */
 public class DateUtilities {
@@ -35,7 +36,7 @@ public class DateUtilities {
      */
     public Duration getDateDiff(){
         LocalDateTime startDate = LocalDateTime.now();
-        LocalDateTime endDate = startDate.withDayOfMonth(22).withDayOfYear(360);
+        LocalDateTime endDate = LocalDateTime.of(2015, Month.OCTOBER, 27, 15, 35);
         Duration diff = Duration.between(startDate, endDate);
         return diff;
        
@@ -99,24 +100,27 @@ public class DateUtilities {
 //        LocalDateTime date = app.getCurrentDateTime();
 //        System.out.println(date);
         
+//        Duration diff = app.getDateDiff();
+//        System.out.println(diff.toMinutes() + " minutes to go til date entered");
+//        System.out.println(diff.toDays()+ " days til the date entered");
+//        System.out.println(" ");
+//        
+//        LocalDateTime dueDate = app.getFiveDaysFromNowTwoHoursAgo();
+//        DateTimeFormatter fmt = DateTimeFormatter.ofPattern("MM.dd.yyyy  hh:mm a");
+//        System.out.println(dueDate.format(fmt) + " is exactly 5 days ahead/ 2 hours behind");
+//        
+//        
+//        System.out.println(" ");
+//        
+//           LocalDate date = app.toDate("1985-10-18");
+//           System.out.println(date.format(DateTimeFormatter.ofPattern("MM-dd-yyyy")));
+//           LocalDateTime date2 = app.toDateTime("1985-10-18 08:22");
+//           System.out.println(date2.format(DateTimeFormatter.ofPattern("mm:HH dd-yyyy-MM")));
+//        
         Duration diff = app.getDateDiff();
-        System.out.println(diff.toMinutes() + " minutes to go til date entered");
-        System.out.println(diff.toDays()+ " days til the date entered");
-        System.out.println(" ");
+        System.out.println(diff.toMinutes()*60 + " seconds");
         
-        LocalDateTime dueDate = app.getFiveDaysFromNowTwoHoursAgo();
-        DateTimeFormatter fmt = DateTimeFormatter.ofPattern("MM.dd.yyyy  hh:mm a");
-        System.out.println(dueDate.format(fmt) + " is exactly 5 days ahead/ 2 hours behind");
-        
-        
-        System.out.println(" ");
-        
-           LocalDate date = app.toDate("1985-10-18");
-           System.out.println(date.format(DateTimeFormatter.ofPattern("MM-dd-yyyy")));
-           LocalDateTime date2 = app.toDateTime("1985-10-18 08:22");
-           System.out.println(date2.format(DateTimeFormatter.ofPattern("mm:HH dd-yyyy-MM")));
-        
-        
+//        
     }
    
 
